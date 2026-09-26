@@ -34,7 +34,7 @@ const year = new Date().getFullYear();
 		align-self: center;
 		margin: 0;
 		padding: 2vw $gutter;
-		font-size: clamp(4.3rem, 14vw, 13rem);
+		font-size: clamp(4.3rem, 11vw, 13rem);
 		line-height: 0.73;
 		letter-spacing: -0.095em;
 		text-transform: uppercase;
@@ -42,16 +42,26 @@ const year = new Date().getFullYear();
 
 		span {
 			display: block;
+			margin-bottom: 8px;
 
 			&:last-child {
 				color: $blue;
-				margin-left: 8vw;
 			}
 		}
 
 		@include mobile {
-			font-size: clamp(4.2rem, 22vw, 8rem);
+			font-size: 3rem;
 		}
+	}
+	@media (min-width: 768px) {
+		.hero-name{
+			span {
+				&:last-child {
+					margin-left: 8vw;
+				}
+			}
+		}
+
 	}
 
 	.hero-meta {
