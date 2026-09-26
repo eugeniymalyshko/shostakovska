@@ -1,0 +1,85 @@
+---
+const socials = [
+	{ href: 'https://www.instagram.com/ll_ks_ks_ks/', label: 'Instagram' },
+	{ href: 'https://www.linkedin.com/in/ksusha-shostakovska-0b645042b/', label: 'LinkedIn' },
+];
+---
+
+<footer id="contact">
+	<div>
+		<h2>Let’s make<br />something.</h2>
+	</div>
+	<div>
+		{
+			socials.map(({ href, label }) => (
+				<a href={href} target="_blank" rel="noreferrer">
+					{label} ↗
+				</a>
+			))
+		}
+	</div>
+	<a class="top" href="#top">Back to top ↑</a>
+</footer>
+
+<style lang="scss">
+	@use '../styles/variables' as *;
+	@use '../styles/mixins' as *;
+
+	footer {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		background: $ink;
+		color: $white;
+
+		> * {
+			padding: $gutter;
+			border-right: $line-inverse;
+
+			&:last-child {
+				border-right: 0;
+			}
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+
+			> * {
+				border-right: 0;
+				border-bottom: $line-inverse;
+
+				&:last-child {
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+
+	h2 {
+		margin: 0;
+		font-size: clamp(2.5rem, 8vw, 8rem);
+		line-height: 0.8;
+		letter-spacing: -0.075em;
+		text-transform: uppercase;
+		color: $yellow;
+	}
+
+	a {
+		display: block;
+		margin-bottom: 0.6rem;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $yellow;
+		}
+	}
+
+	.top {
+		align-self: end;
+		text-align: right;
+
+		@include mobile {
+			text-align: left;
+		}
+	}
+</style>

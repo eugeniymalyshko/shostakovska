@@ -1,0 +1,45 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+
+	@include reduced-motion {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	margin: 0;
+	background: $paper;
+	color: $ink;
+	font-family: $font-sans;
+	font-size: 16px;
+	line-height: 1.3;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline: 4px solid $blue;
+	outline-offset: 4px;
+}
+
+.text-link {
+	@include hover-underline;
+}

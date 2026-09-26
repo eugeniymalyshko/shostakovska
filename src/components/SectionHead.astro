@@ -1,0 +1,52 @@
+---
+interface Props {
+	id: string;
+	title: string;
+	lead: string;
+}
+
+const { id, title, lead } = Astro.props;
+---
+
+<header class="section-head">
+	<h2 id={id}>{title}</h2>
+	<p>{lead}</p>
+</header>
+
+<style lang="scss">
+	@use '../styles/variables' as *;
+	@use '../styles/mixins' as *;
+
+	.section-head {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: $gutter;
+		padding: $gutter;
+		border-bottom: $line;
+		text-transform: uppercase;
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	h2,
+	p {
+		margin: 0;
+	}
+
+	h2 {
+		font-size: 1rem;
+	}
+
+	p {
+		font-size: clamp(1.6rem, 4vw, 4rem);
+		line-height: 0.96;
+		letter-spacing: -0.055em;
+		max-width: 18ch;
+
+		@include mobile {
+			max-width: none;
+		}
+	}
+</style>

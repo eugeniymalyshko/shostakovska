@@ -1,0 +1,29 @@
+---
+import '../styles/global.scss';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const siteName = 'Ksusha Shostakovska';
+const {
+	title,
+	description = 'Portfolio of Ksusha Shostakovska — Ukrainian graphic designer and visual artist working across typography, publications, illustration and objects.',
+} = Astro.props;
+const pageTitle = title ? `${title} — ${siteName}` : `${siteName} — Graphic Designer & Visual Artist`;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{pageTitle}</title>
+	</head>
+	<body id="top">
+		<slot />
+	</body>
+</html>

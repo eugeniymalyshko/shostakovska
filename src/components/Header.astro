@@ -1,0 +1,61 @@
+---
+const links = [
+	{ href: '#work', label: 'Work' },
+	{ href: '#about', label: 'About' },
+	{ href: '#education', label: 'Education' },
+	{ href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="masthead">
+	<a class="wordmark" href="#top">Ksusha Shostakovska</a>
+	<nav aria-label="Main navigation">
+		{links.map(({ href, label }) => <a href={href}>{label}</a>)}
+	</nav>
+</header>
+
+<style lang="scss">
+	@use '../styles/variables' as *;
+	@use '../styles/mixins' as *;
+
+	.masthead {
+		position: sticky;
+		top: 0;
+		z-index: 30;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		padding: 0.8rem $gutter;
+		border-bottom: $line;
+		background: rgba($paper, 0.95);
+		backdrop-filter: blur(8px);
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.wordmark {
+		font-size: clamp(1rem, 2vw, 1.45rem);
+		font-weight: 800;
+		letter-spacing: -0.04em;
+		text-transform: uppercase;
+	}
+
+	nav {
+		display: flex;
+		gap: 1.25rem;
+		@include label(0.8rem);
+
+		a {
+			@include hover-underline;
+		}
+
+		@include mobile {
+			margin-top: 0.55rem;
+			justify-content: space-between;
+			gap: 0.5rem;
+			flex-wrap: wrap;
+		}
+	}
+</style>

@@ -1,0 +1,114 @@
+---
+const rows = [
+	{ date: '2023–2027', note: 'Ongoing', school: 'Royal Academy of Fine Arts Antwerp', detail: 'BA Graphic Design' },
+	{
+		date: '2021–2023',
+		school: 'Central Saint Martins, London',
+		detail: 'Foundation Programme · 3D Design & Objects · Editorial Design',
+	},
+	{ date: 'Courses', school: 'SKVOT Kyiv', detail: 'Typography · Copywriting' },
+	{ date: 'Course', school: 'Projector Institute', detail: 'History of Ukrainian Design' },
+];
+---
+
+<section class="education" id="education" aria-labelledby="education-title">
+	<header class="education-heading">
+		<h2 id="education-title">Education &amp; Courses</h2>
+	</header>
+	<div class="education-list">
+		{
+			rows.map(({ date, note, school, detail }) => (
+				<article class="edu-row">
+					<p class="edu-date">
+						{date}
+						{note && (
+							<>
+								<br />
+								<span>{note}</span>
+							</>
+						)}
+					</p>
+					<div>
+						<h3>{school}</h3>
+						<p>{detail}</p>
+					</div>
+				</article>
+			))
+		}
+	</div>
+</section>
+
+<style lang="scss">
+	@use '../styles/variables' as *;
+	@use '../styles/mixins' as *;
+
+	.education {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		border-bottom: $line;
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.education-heading {
+		padding: $gutter;
+		border-right: $line;
+		text-transform: uppercase;
+
+		h2 {
+			margin: 0;
+			font-size: 1rem;
+		}
+
+		@include mobile {
+			border-right: 0;
+			border-bottom: $line;
+		}
+	}
+
+	.education-list {
+		min-width: 0;
+	}
+
+	.edu-row {
+		display: grid;
+		grid-template-columns: 9rem 1fr;
+		border-bottom: $line;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		> * {
+			margin: 0;
+			padding: $gutter;
+		}
+
+		h3 {
+			margin: 0 0 0.35rem;
+			font-size: clamp(1.35rem, 2.4vw, 2.4rem);
+			line-height: 1;
+			letter-spacing: -0.04em;
+		}
+
+		div p {
+			margin: 0;
+			font-size: 1rem;
+		}
+
+		@include mobile {
+			grid-template-columns: 7rem 1fr;
+		}
+	}
+
+	.edu-date {
+		border-right: $line;
+		@include label;
+
+		span {
+			color: $blue;
+		}
+	}
+</style>

@@ -1,0 +1,87 @@
+---
+const year = new Date().getFullYear();
+---
+
+<section class="intro" aria-labelledby="intro-title">
+	<h1 class="hero-name" id="intro-title">
+		<span>Ksusha</span>
+		<span>Shostakovska</span>
+	</h1>
+	<div class="hero-meta">
+		<div>Graphic designer<br />&amp; visual artist</div>
+		<div>Typography · Publications<br />Illustration · Objects</div>
+		<div>Antwerp, Belgium<br />{year}</div>
+	</div>
+</section>
+
+<style lang="scss">
+	@use '../styles/variables' as *;
+	@use '../styles/mixins' as *;
+
+	.intro {
+		min-height: calc(100svh - 52px);
+		display: grid;
+		grid-template-rows: 1fr auto;
+		border-bottom: $line;
+		overflow: hidden;
+
+		@include mobile {
+			min-height: 84svh;
+		}
+	}
+
+	.hero-name {
+		align-self: center;
+		margin: 0;
+		padding: 2vw $gutter;
+		font-size: clamp(4.3rem, 14vw, 13rem);
+		line-height: 0.73;
+		letter-spacing: -0.095em;
+		text-transform: uppercase;
+		font-weight: 900;
+
+		span {
+			display: block;
+
+			&:last-child {
+				color: $blue;
+				margin-left: 8vw;
+			}
+		}
+
+		@include mobile {
+			font-size: clamp(4.2rem, 22vw, 8rem);
+		}
+	}
+
+	.hero-meta {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		border-top: $line;
+		@include label(0.85rem);
+
+		div {
+			padding: 0.8rem $gutter;
+			border-right: $line;
+
+			&:last-child {
+				border-right: 0;
+				text-align: right;
+			}
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+
+			div {
+				border-right: 0;
+				border-bottom: $line;
+
+				&:last-child {
+					border-bottom: 0;
+					text-align: left;
+				}
+			}
+		}
+	}
+</style>

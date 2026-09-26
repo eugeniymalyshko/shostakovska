@@ -1,0 +1,58 @@
+<section class="about" id="about" aria-labelledby="about-title">
+	<h2 class="about-title" id="about-title">About</h2>
+	<div class="about-copy">
+		<p>Ukrainian graphic designer and visual artist studying at the Royal Academy of Fine Arts Antwerp.</p>
+		<p class="small">
+			My practice moves between graphic design, typography, publications, illustration, ceramics and spatial objects. I
+			collect overlooked details and use making as a way to ask questions. I am interested in collaborations, commissions
+			and internships.
+		</p>
+	</div>
+</section>
+
+<style lang="scss">
+	@use '../styles/variables' as *;
+	@use '../styles/mixins' as *;
+
+	.about {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		border-bottom: $line;
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.about-title {
+		margin: 0;
+		padding: $gutter;
+		border-right: $line;
+		font-size: 1rem;
+		text-transform: uppercase;
+
+		@include mobile {
+			border-right: 0;
+			border-bottom: $line;
+		}
+	}
+
+	.about-copy {
+		padding: $gutter;
+		font-size: clamp(1.8rem, 4vw, 4.2rem);
+		line-height: 1.03;
+		letter-spacing: -0.05em;
+
+		p {
+			margin: 0 0 1em;
+		}
+
+		.small {
+			max-width: 50ch;
+			margin-left: auto;
+			font-size: 1rem;
+			line-height: 1.45;
+			letter-spacing: 0;
+		}
+	}
+</style>

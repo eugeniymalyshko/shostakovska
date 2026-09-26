@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+@mixin mobile {
+	@media (max-width: $bp-mobile) {
+		@content;
+	}
+}
+
+@mixin reduced-motion {
+	@media (prefers-reduced-motion: reduce) {
+		@content;
+	}
+}
+
+// Small bold uppercase label used across section headers and meta rows
+@mixin label($size: 0.82rem) {
+	font-size: $size;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+@mixin hover-underline {
+	&:hover {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+}

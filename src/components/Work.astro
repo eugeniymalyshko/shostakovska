@@ -1,0 +1,27 @@
+---
+import SectionHead from './SectionHead.astro';
+import ProjectCard from './ProjectCard.astro';
+import { getProjects } from '../lib/projects';
+
+const projects = await getProjects();
+---
+
+<section id="work" aria-labelledby="work-title">
+	<SectionHead id="work-title" title="Selected work ↓" lead="Books, images and objects—edited, translated and rebuilt." />
+	<div class="projects">
+		{projects.map((project) => <ProjectCard project={project} />)}
+	</div>
+</section>
+
+<style lang="scss">
+	@use '../styles/mixins' as *;
+
+	.projects {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

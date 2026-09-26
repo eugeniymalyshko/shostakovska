@@ -1,0 +1,88 @@
+---
+import SectionHead from './SectionHead.astro';
+
+const items = [
+	{ label: 'Photobook', title: 'Parallelism' },
+	{ label: 'Typography / Objects', title: 'Ґ Є Ї' },
+	{ label: 'With Sumac Space', title: 'abв字' },
+	{ label: 'Ceramics', title: 'Volcano' },
+];
+---
+
+<section aria-labelledby="archive-title">
+	<SectionHead id="archive-title" title="Archive / ongoing" lead="Spatial letters, collaborations and material experiments." />
+	<div class="archive">
+		{
+			items.map(({ label, title }) => (
+				<div class="archive-item">
+					<span>{label}</span>
+					<strong>{title}</strong>
+				</div>
+			))
+		}
+	</div>
+</section>
+
+<style lang="scss">
+	@use '../styles/variables' as *;
+	@use '../styles/mixins' as *;
+
+	.archive {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		border-bottom: $line;
+
+		@include mobile {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.archive-item {
+		min-height: 17rem;
+		padding: $gutter;
+		border-right: $line;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-transform: uppercase;
+		overflow: hidden;
+
+		&:last-child {
+			border-right: 0;
+		}
+
+		strong {
+			font-size: clamp(2rem, 4vw, 4.5rem);
+			line-height: 0.8;
+			letter-spacing: -0.07em;
+		}
+
+		&:nth-child(1) {
+			background: $yellow;
+		}
+
+		&:nth-child(2) {
+			background: $blue;
+			color: $white;
+		}
+
+		&:nth-child(3) {
+			background: $red;
+		}
+
+		&:nth-child(4) {
+			background: $grey;
+			font-family: $font-serif;
+			font-style: italic;
+		}
+
+		@include mobile {
+			min-height: 13rem;
+			border-bottom: $line;
+
+			&:nth-child(2) {
+				border-right: 0;
+			}
+		}
+	}
+</style>
