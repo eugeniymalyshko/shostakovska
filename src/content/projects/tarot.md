@@ -1,7 +1,7 @@
 ---
 title: Tarot
-category: Illustration / Card Series
-type: Illustration / Card Series
+category: Illustration · Card Series
+type: Illustration · Card Series
 description: A hand-drawn tarot series that reinterprets familiar archetypes through loose line, bright colour and contemporary figures. The cards remain personal, open and deliberately imperfect.
 order: 5
 background: blue

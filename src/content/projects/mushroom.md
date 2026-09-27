@@ -1,7 +1,7 @@
 ---
 title: Mushroom Book
-category: Artist Book / Editorial
-type: Artist Book / Editorial
+category: Artist Book · Editorial
+type: Artist Book · Editorial
 description: An editorial response to Anna Lowenhaupt Tsing’s “The Mushroom at the End of the World.” Layered pages, annotations, tabs and translucent material turn research into a tactile reading object.
 order: 3
 background: black

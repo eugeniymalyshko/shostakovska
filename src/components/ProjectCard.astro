@@ -96,7 +96,7 @@ const { title, category, cover, coverAlt, background } = project.data;
 			right: $gutter;
 			bottom: $gutter;
 			padding: 0.45rem 0.65rem;
-			background: $ink;
+			// background: $ink;
 			color: $white;
 			@include label(0.75rem);
 			transform: translateY(4rem);
@@ -119,7 +119,10 @@ const { title, category, cover, coverAlt, background } = project.data;
 	.bg-yellow { background: $yellow; }
 	.bg-red { background: $red; }
 	.bg-grey { background: $grey; }
-	.bg-black { background: $black; }
+	.bg-green { background: $green; }
+	.bg-magenta { background: $magenta; }
+	.bg-lavender { background: $lavender; }
+	.bg-warm-gray { background: $warm-gray; }
 
 	.project-info {
 		display: grid;
@@ -128,6 +131,8 @@ const { title, category, cover, coverAlt, background } = project.data;
 		padding: $gutter;
 		border-top: $line;
 		background: $paper;
+		align-items: center;
+		min-height: 86px;
 
 		h3,
 		p {

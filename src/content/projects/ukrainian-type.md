@@ -1,7 +1,7 @@
 ---
 title: Serif & Ukrainian Typography
-category: Research / Spatial Objects
-type: Research Publication / Spatial Objects
+category: Research · Spatial Objects
+type: Research Publication · Spatial Objects
 description: A material study of Ukrainian typography and the letters Ґ, Є and Ї. Historical research, formal analysis and hands-on tests lead to three free-standing wooden letterforms that shift typography from the page into physical space.
 order: 1
 background: black

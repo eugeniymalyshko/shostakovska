@@ -1,6 +1,9 @@
 ---
 const rows = [
-	{ date: '2023–2027', note: 'Ongoing', school: 'Royal Academy of Fine Arts Antwerp', detail: 'BA Graphic Design' },
+	{ 
+		date: '2023–2026', 
+		// note: 'Ongoing', 
+		school: 'Royal Academy of Fine Arts Antwerp — MA Graphic Design', detail: 'Ongoing BA' },
 	{
 		date: '2021–2023',
 		school: 'Central Saint Martins, London',
@@ -17,16 +20,16 @@ const rows = [
 	</header>
 	<div class="education-list">
 		{
-			rows.map(({ date, note, school, detail }) => (
+			rows.map(({ date, /*note,*/ school, detail }) => (
 				<article class="edu-row">
 					<p class="edu-date">
 						{date}
-						{note && (
+						{/* {note && (
 							<>
 								<br />
 								<span>{note}</span>
 							</>
-						)}
+						)} */}
 					</p>
 					<div>
 						<h3>{school}</h3>

@@ -4,12 +4,13 @@ import ProjectCard from './ProjectCard.astro';
 import { getProjects } from '../lib/projects';
 
 const projects = await getProjects();
+
 ---
 
 <section id="work" aria-labelledby="work-title">
 	<SectionHead id="work-title" title="Selected work ↓" lead="Books, images and objects—edited, translated and rebuilt." />
 	<div class="projects">
-		{projects.map((project) => <ProjectCard project={project} />)}
+		{projects.map((project) => <ProjectCard project={project} /> )}
 	</div>
 </section>
 
