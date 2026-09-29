@@ -14,6 +14,9 @@ const projects = defineCollection({
       description: z.string(),
       order: z.number(),
       background: z.enum([
+        "lime",
+        "mango",
+        "peach",
         "blue",
         "yellow",
         "red",
