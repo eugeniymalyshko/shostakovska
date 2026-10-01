@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 *,
 *::before,
@@ -9,6 +9,12 @@
 
 html {
 	scroll-behavior: smooth;
+	// Keep anchor targets (#work, #about…) from landing under the sticky header
+	scroll-padding-top: var(--header-height, #{$header-height});
+
+	@include mobile {
+		scroll-padding-top: var(--header-height, #{$header-height-mobile});
+	}
 
 	@include reduced-motion {
 		scroll-behavior: auto;
@@ -42,4 +48,13 @@ button:focus-visible {
 
 .text-link {
 	@include hover-underline;
+}
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+ul li,
+ol li {
+	list-style: none;
 }

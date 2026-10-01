@@ -19,7 +19,7 @@ const year = new Date().getFullYear();
 	@use '../styles/mixins' as *;
 
 	.intro {
-		min-height: calc(100svh - 52px);
+		min-height: calc(100svh - #{$header-height});
 		display: grid;
 		grid-template-rows: 1fr auto;
 		border-bottom: $line;

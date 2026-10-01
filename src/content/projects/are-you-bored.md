@@ -4,7 +4,6 @@ category: Editorial Design · Publication · Visual Research
 type: Editorial Design · Publication · Visual Research
 description: Are You Bored or Fancy with Reading? is an experimental publication built around a personal inventory of 99 books I read while travelling through Europe. other. Instead of presenting the books as a conventional reading list, I constructed a visual timeline. Each title is paired with an image connected through its year, creating unexpected relationships between literature, art, photography, graphic design and visual culture. The publication turns a personal archive of reading into a chronological visual journey, where books become starting points for new associations rather than entries in a list.
 order: 9
-background: lavender
 cover: ../../assets/are-you-bored/p-01.webp
 coverAlt: Are You Bored or Fancy with Reading? is an experimental publication built around a personal inventory of 99 books I read while travelling through Europe. other.
 images:

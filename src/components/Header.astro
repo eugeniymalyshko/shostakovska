@@ -14,6 +14,19 @@ const links = [
 	</nav>
 </header>
 
+<script>
+	// Expose the real header height so anchor scrolling stops right below it
+	const masthead = document.querySelector<HTMLElement>('.masthead');
+
+	if (masthead) {
+		const setHeight = () =>
+			document.documentElement.style.setProperty('--header-height', `${masthead.offsetHeight}px`);
+
+		setHeight();
+		new ResizeObserver(setHeight).observe(masthead);
+	}
+</script>
+
 <style lang="scss">
 	@use '../styles/variables' as *;
 	@use '../styles/mixins' as *;

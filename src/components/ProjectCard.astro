@@ -7,11 +7,11 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { title, category, cover, coverAlt, background } = project.data;
+const { title, category, cover, coverAlt } = project.data;
 ---
 
 <a class="project-card" href={`/work/${project.id}/`}>
-	<div class:list={['project-image', `bg-${background}`]}>
+	<div class="project-image">
 		<Image src={cover} alt={coverAlt} widths={[640, 960, 1400]} sizes="(max-width: 760px) 100vw, 50vw" />
 	</div>
 	<div class="project-info">
@@ -21,6 +21,7 @@ const { title, category, cover, coverAlt, background } = project.data;
 </a>
 
 <style lang="scss">
+	@use 'sass:list';
 	@use '../styles/variables' as *;
 	@use '../styles/mixins' as *;
 
@@ -78,7 +79,6 @@ const { title, category, cover, coverAlt, background } = project.data;
 		place-items: center;
 		overflow: hidden;
 		padding: clamp(1rem, 3vw, 3.5rem);
-		background: #ddd;
 		isolation: isolate;
 
 		img {
@@ -115,18 +115,15 @@ const { title, category, cover, coverAlt, background } = project.data;
 		}
 	}
 
-	.bg-lime { background: $lime; }
-	.bg-mango { background: $mango; }
-	.bg-peach { background: $peach; }
-	.bg-blue { background: $blue; }
-	.bg-yellow { background: $yellow; }
-	.bg-red { background: $red; }
-	.bg-grey { background: $grey; }
-	.bg-green { background: $green; }
-	.bg-magenta { background: $magenta; }
-	.bg-lavender { background: $lavender; }
-	.bg-warm-gray { background: $warm-gray; }
-	
+	// Card backgrounds repeat in order: 1st, 2nd, 3rd colour, then start again
+	@each $color in $project-backgrounds {
+		$i: list.index($project-backgrounds, $color);
+
+		.project-card:nth-child(#{list.length($project-backgrounds)}n + #{$i}) .project-image {
+			background: $color;
+		}
+	}
+
 	.project-info {
 		display: grid;
 		grid-template-columns: 1fr auto;

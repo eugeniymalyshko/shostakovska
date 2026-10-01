@@ -8,27 +8,29 @@ const socials = [
 ];
 ---
 
-<footer id="contact">
-	<div>
-		<h2>Let’s make<br />something.</h2>
-	</div>
-	<div>
+<footer id="contact" class="footer">
+	<h2 class="footer__title title title--h2">Let’s make<br />something.</h2>
+	<ul class="footer__links">
 		{
 			socials.map(({ href, label }) => (
-				<a href={href} target="_blank" rel="noreferrer">
-					{label} ★
-				</a>
+				<li class="footer__link">
+					<a href={href} target="_blank" rel="noreferrer">
+						{label} <span>★</span>
+					</a>
+				</li>
 			))
 		}
+	</ul>
+	<div class="footer__top">
+		<a class="footer__top-link" scroll-behavior="smooth" href="#top">Back to top ↑</a>
 	</div>
-	<a class="top" scroll-behavior="smooth" href="#top">Back to top ↑</a>
 </footer>
 
 <style lang="scss">
 	@use '../styles/variables' as *;
 	@use '../styles/mixins' as *;
 
-	footer {
+	.footer {
 		display: grid;
 		grid-template-columns: 2fr 1fr 1fr;
 		background: $ink;
@@ -60,7 +62,7 @@ const socials = [
 	h2 {
 		margin: 0;
 		font-size: clamp(2.5rem, 8vw, 8rem);
-		line-height: 0.8;
+		line-height: 95%;
 		letter-spacing: -0.075em;
 		text-transform: uppercase;
 		color: $yellow;

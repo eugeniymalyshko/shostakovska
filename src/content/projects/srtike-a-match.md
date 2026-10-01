@@ -8,7 +8,6 @@ Year: 2024
 Format: Poster series
 Methods: Photography, collage, illustration, digital manipulation, typography
 order: 8
-background: magenta
 cover: ../../assets/strike-a-match/p-01.jpg
 coverAlt: Strike a Match, Ignite the Flame is a series of visual experiments built around the image of a match, fire, and the moment of ignition.
 images:

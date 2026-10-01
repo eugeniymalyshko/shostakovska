@@ -1,19 +1,24 @@
 // Colours
-$lime: #ccff00;
-$mango: #ff9500;
-$peach: #ffaf7a;
+$light-grey: #ddd;
+$grey: #c4c4c4;
+$graphite: #eae9e4;
+// $lime: #ccff00;
+// $mango: #ff9500;
+// $peach: #ffaf7a;
 $ink: #111;
 $paper: #f4f3ee;
-$blue: #2f43ff;
 $yellow: #fff44a;
-$red: #ff4d38;
-$grey: #c6c5bf;
-$green: #00e559;
-$magenta: #e038ff;
-$lavender: #dce1ff;
-$warm-gray: #00e5ff;
+// $red: #ff4d38;
+// $green: #00e559;
+// $magenta: #e038ff;
+// $lavender: #dce1ff;
+// $warm-gray: #00e5ff;
+$blue: #2f43ff;
 $black: #171717;
 $white: #fff;
+
+// Project card backgrounds in Selected work, used one after another
+$project-backgrounds: $light-grey, $grey, $graphite;
 
 // Lines
 $line: 2px solid $ink;
@@ -25,6 +30,10 @@ $font-serif: Georgia, serif;
 
 // Spacing
 $gutter: 1rem;
+
+// Sticky header height (fallbacks, the real value is measured in Header.astro)
+$header-height: 52px;
+$header-height-mobile: 76px;
 
 // Breakpoints
 $bp-mobile: 760px;

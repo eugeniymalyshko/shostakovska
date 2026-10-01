@@ -4,7 +4,6 @@ category: Artist Book · Visual Research
 type: Artist Book · Visual Research
 description: An artist book built around the unstable idea of home. Found images, personal references and small visual associations are edited into a loose archive rather than a fixed definition.
 order: 6
-background: yellow
 cover: ../../assets/home/p-1.jpg
 coverAlt: Open publication with two green house drawings
 images:
