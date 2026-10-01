@@ -25,5 +25,8 @@ const pageTitle = title ? `${title} — ${siteName}` : `${siteName} — Graphic 
 	</head>
 	<body id="top">
 		<slot />
+		<script>
+			import '../scripts/smooth-scroll';
+		</script>
 	</body>
 </html>
