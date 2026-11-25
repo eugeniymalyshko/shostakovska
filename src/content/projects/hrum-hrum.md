@@ -3,7 +3,7 @@ title: HRUM HRUM
 category: Visual identity · Packaging · Motion
 type: Visual identity · Packaging · Motion
 description: What does a cookie sound like in type? HRUM HRUM is the sound of taking a bite. I wanted the identity to feel like that first crunch, so I took bites out of the letters and animated the type. The bitten letters and playful stickers carry that same energy from the cookie box to the screen.
-order: 1
+order: 2
 cover: ../../assets/hrum-hrum/hrum-hrum.webp
 coverAlt: What does a cookie sound like in type? HRUM HRUM is the sound of taking a bite.
 images:
